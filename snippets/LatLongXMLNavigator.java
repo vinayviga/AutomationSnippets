@@ -27,7 +27,9 @@ import java.util.*;
 /**
  * This class will iterate through the latitudes and longitudes through appium which keeps updating the location
  * on the map which resembles a travel
- * IMPORTANT NOTE : PLEASE DISABLE YOUR COMPUTER'S LOCATION SERVICES if an emulator is used as it causes distortion of location
+ * IMPORTANT NOTE :
+ * 1. PLEASE DISABLE YOUR COMPUTER'S LOCATION SERVICES if an emulator is used as it causes distortion of location
+ * 2. ENABLE THE DEVICE LOCATION if you are running this code on an actual device
  */
 public class LatLongXMLNavigator
 {
@@ -118,11 +120,12 @@ public class LatLongXMLNavigator
         capabilities.setCapability("platformName", "Android");
         capabilities.setCapability(CapabilityType.VERSION, "7.0");
         capabilities.setCapability(MobileCapabilityType.NO_RESET, true);
+        /*capabilities.setCapability("gpsEnabled", "false");
+        capabilities.setCapability(CapabilityType.SUPPORTS_LOCATION_CONTEXT, "locationContextDisabled");*/
         capabilities.setCapability("appPackage", "com.google.android.apps.maps");
         capabilities.setCapability("appActivity", "com.google.android.maps.MapsActivity");
         capabilities.setCapability(MobileCapabilityType.TAKES_SCREENSHOT, "true");
         driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
-
         LatLongXMLNavigator ll = new LatLongXMLNavigator();
         ll.parser(driver);
 
@@ -146,6 +149,7 @@ public class LatLongXMLNavigator
     public static void networkON()
     {
         Process process;
+
         String[] aCommand = new String[]{"adb", "shell", "settings", "put", "secure", "location_providers_allowed", "+network"};
         try {
             process = new ProcessBuilder(aCommand).start();
