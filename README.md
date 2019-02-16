@@ -1,5 +1,5 @@
 # AutomationSnippets
-few handy solutions for an everyday SDET
+few handy solutions for an everyday SDET. Please make sure you have the complete installation and setup ready for selenium/appium before you use the code. 
 
  ***LatLongXMLNavigator***  : Maps navigation using Appium Locator class and GPX file. Extracting a GPX file :
 http://www.bedsforcyclists.co.uk/articles/2014/04/13/how-to-plan-a-route-in-google-maps-and-export-it-to-gpx-your-phone/
