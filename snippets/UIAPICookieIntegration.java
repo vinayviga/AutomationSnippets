@@ -91,9 +91,8 @@ public class UIAPICookieIntegration {
 
 		String response =
 
-				given().formParams("client_id",
-						"692183103107-p0m7ent2hk7suguv4vq22hjcfhcr43pj.apps.googleusercontent.com")
-				.formParams("client_secret", "erZOWM9g3UtwNRj340YYaK_W")
+				given().formParams("client_id","")//enter client ID
+				.formParams("client_secret", "")//enter client secret
 				.formParams("grant_type", "client_credentials").formParams("scope", "trust").when().log().all()
 
 				.post("https://rahulshettyacademy.com/oauthapi/oauth2/resourceOwner/token").asString();
@@ -108,7 +107,7 @@ public class UIAPICookieIntegration {
 		driver.get("https://rahulshettyacademy.com/oauthapi/getCourseDetails?access_token=" + accessToken);
 		Thread.sleep(4000);
 
-		driver.get("file:///C:/Users/Vinay/Downloads/dictator.gif");// remove this URL and you can use your own gif
+		driver.get("file:///C:/Users/Vinay/Downloads/dictator.gif");// remove this URL and you can use your own gif :)
 		Thread.sleep(6000);
 		// cleanup
 		driver.quit();
