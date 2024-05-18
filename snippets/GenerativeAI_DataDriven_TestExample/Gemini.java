@@ -30,7 +30,7 @@ import java.io.OutputStream;
 
 public class Gemini {
 	public static Map<String, String> aiDataGenerator() throws IOException {
-		String apiKey = "AIzaSyCgGYcg2wSy-5pLLcNpfrtqZw_twdxE7HQ";// your API key
+		String apiKey = "";// your API key
 		String url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro-latest:generateContent";
 
 		// Create the request body object
@@ -159,7 +159,7 @@ public class Gemini {
 		}
 		Reqres.reqresDelete(finnigan.get(0).get(2));
 		GoogleSheetsIntegration.deleteCells(users.size() + 1);
-		driver.get("file:///C:/Users/Vinay/Downloads/finnigan.gif");
+		driver.get("file:///C:/Users/Vinay/Downloads/finnigan.gif");//use your own gif
 		Thread.sleep(3000);
 		driver.get("https://docs.google.com/spreadsheets/d/1SP_qfbkIEYf1P8DIV8d-yiDCXCFlUjzvzk0rjbnrTdQ/edit#gid=0");
 		Thread.sleep(3000);
