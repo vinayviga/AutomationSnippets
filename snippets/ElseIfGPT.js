@@ -41,8 +41,7 @@ function checkNumber(input) {
         rl.close(); // Close input stream and exit
         return;
     }
-    // Increase delivery time by 10 for every selection except exit
-    deliveryTime += 10;
+    
      // Ask again until user exits
 }
 
@@ -54,8 +53,10 @@ function promptUser() {
     console.log("\x1b[31m 3. Items are missing/damaged from the order \x1b[0m");
     console.log("\x1b[31m 4. The delivery rider is moving in the wrong direction/ not moving \x1b[0m");
     console.log('\x1b[31m 5. I realized this is a waste of time \x1b[0m');
-
+	// Increase delivery time by 10 for every selection except exit
+    deliveryTime += 10;
     rl.question("Enter the issue number: ", checkNumber);
+	
 }
 
 function issue3()
